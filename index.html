@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian B. Alejandro - Professional Welder/Fabricator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #005b96;
+      --secondary: #ffc72c;
+      --dark: #1a2b3c;
+      --gray: #6c757d;
+      --light-gray: #f8f9fa;
+      --white: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.4;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .resume {
+      background: var(--white);
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: 100vh;
+    }
+    
+    .sidebar {
+      background: var(--primary);
+      padding: 1.2rem 1rem;
+      color: white;
+      position: relative;
+      padding-top: 80px;
+    }
+    
+    .main-content {
+      padding: 1.2rem 1.5rem;
+    }
+    
+    .profile-img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border: 3px solid var(--secondary);
+      margin: 0 auto 0.8rem;
+      display: block;
+      box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--secondary);
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: white;
+    }
+    
+    .title {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+    }
+    
+    .title::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+      margin: 0.5rem auto;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+      color: white;
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--secondary);
+    }
+    
+    .main-content h2 {
+      color: var(--primary);
+      border-left: 3px solid var(--secondary);
+      padding-left: 0.6rem;
+      margin: 1rem 0 0.6rem;
+    }
+    
+    .main-content h2::after {
+      display: none;
+    }
+    
+    .contact-list {
+      list-style: none;
+      margin-top: 0.3rem;
+    }
+    
+    .contact-list li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .contact-icon {
+      color: var(--secondary);
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+    
+    .info-list {
+      list-style: none;
+      font-size: 0.8rem;
+    }
+    
+    .info-list li {
+      margin-bottom: 0.4rem;
+      position: relative;
+      padding-left: 0.8rem;
+    }
+    
+    .info-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+    
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.2rem;
+    }
+    
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .experience {
+      margin-bottom: 0.8rem;
+    }
+    
+    .experience-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+    
+    .company {
+      color: var(--primary);
+      font-size: 0.85rem;
+    }
+    
+    .experience-meta {
+      color: var(--gray);
+      font-size: 0.75rem;
+      margin: 0.1rem 0 0.3rem;
+      display: flex;
+      gap: 0.8rem;
+    }
+    
+    .experience-details {
+      padding-left: 0.8rem;
+    }
+    
+    .experience-details li {
+      margin-bottom: 0.3rem;
+      font-size: 0.8rem;
+      position: relative;
+      padding-left: 0.8rem;
+    }
+    
+    .experience-details li::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+    }
+    
+    .objective {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    .skill-icon {
+      color: var(--secondary);
+      font-size: 0.6rem;
+    }
+    
+    @media (max-width: 768px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        order: -1;
+      }
+      
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <aside class="sidebar">
+      <!-- Square 2x2" photo placeholder with border -->
+      <div class="profile-img" style="background: #ddd; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #999; font-size: 0.7rem;">PHOTO</span>
+      </div>
+      
+      <h1>Christian B. Alejandro</h1>
+      <p class="title">Skilled Welder & Fabricator</p>
+      
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+          <span>alejandrometalworks@gmail.com</span>
+        </li>
+        <li>
+          <span class="contact-icon"><i class="fas fa-phone"></i></span>
+          <span>+63 935 751 8498</span>
+        </li>
+        <li>
+          <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+          <span>Pasig City, Philippines</span>
+        </li>
+      </ul>
+      
+      <h2>Skills</h2>
+      <div class="tag-container">
+        <span class="tag">GTAW</span>
+        <span class="tag">SMAW Welding</span>
+        <span class="tag">Metal Fabrication</span>
+        <span class="tag">Pipe Fitting</span>
+        <span class="tag">Bus Duct Systems</span>
+        <span class="tag">Blueprint Reading</span>
+        <span class="tag">Safety Compliance</span>
+      </div>
+      
+      <h2>Personal</h2>
+      <ul class="info-list">
+        <li><strong>Age:</strong> 26</li>
+        <li><strong>Height:</strong> 5'3" (160cm)</li>
+        <li><strong>Nationality:</strong> Filipino</li>
+        <li><strong>Languages:</strong> English, Filipino</li>
+      </ul>
+    </aside>
+    
+    <main class="main-content">
+      <section class="objective">
+        <h2>Professional Objective</h2>
+        <p>Skilled welder with 5+ years of experience in SMAW and fabrication seeking international opportunities. Proven ability to work with precision in industrial environments while maintaining strict safety standards.</p>
+      </section>
+      
+      <section>
+        <h2>Work Experience</h2>
+        
+        <div class="experience">
+          <div class="experience-title">Welder Fabricator / Contractor</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-briefcase"></i> Freelance</span>
+            <span><i class="fas fa-calendar-alt"></i> 2020–Present</span>
+          </div>
+          <ul class="experience-details">
+            <li>Fabricated and installed custom metal works including grills, stairs, gates, canopies, railings, and loft beds</li>
+            <li>Interpreted blueprints and client instructions to deliver functional and aesthetic designs</li>
+            <li>Performed cutting, welding, fitting, and finishing of various steel structures</li>
+            <li>Ensured safety, accuracy, and quality in all projects</li>
+          </ul>
+        </div>
+        
+        <div class="experience">
+          <div class="experience-title">Welder</div>
+          <div class="company">DMC1</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-calendar-alt"></i> 2022–2023</span>
+          </div>
+          <ul class="experience-details">
+            <li>Operated welding equipment for metal components</li>
+            <li>Precisely cut materials using oxy-acetylene equipment</li>
+          </ul>
+        </div>
+        
+        <div class="experience">
+          <div class="experience-title">Bus Duct Installer and Welder Fabricator</div>
+          <div class="company">Static Power Philippines, Inc.</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-calendar-alt"></i> 2020–2022</span>
+          </div>
+          <ul class="experience-details">
+            <li>Installed bus duct systems for power distribution</li>
+            <li>Performed welding for structural supports</li>
+          </ul>
+        </div>
+
+        <div class="experience">
+          <div class="experience-title">Pipe Fitter / Welder Fabricator</div>
+          <div class="company">TMCTT Tank and Tankers Co.</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-calendar-alt"></i> 2016–2018</span>
+          </div>
+          <ul class="experience-details">
+            <li>Fabricated and installed piping systems for Charge and Discharge Pump</li>
+            <li>Performed welding for structural supports and truck design</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <div class="company">Service Center Inc.</div>
+        <div class="experience-meta">
+          <span><i class="fas fa-calendar-alt"></i> 2022</span>
+        </div>
+        <div class="experience">
+          <ul class="experience-details">
+            <li>Shelded Metal Arc Welding (SMAW) NCII</li>
+            <li>Gas Tungsten Arc Welding (GTAW) NCII</li>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+          <div class="skill-item">
+            <span class="skill-icon"><i class="fas fa-check"></i></span>
+            <span>Proficient in SMAW welding</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"><i class="fas fa-check"></i></span>
+            <span>Metal fabrication</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"><i class="fas fa-check"></i></span>
+            <span>Pipe fitting</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"><i class="fas fa-check"></i></span>
+            <span>Bus duct installation</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"><i class="fas fa-check"></i></span>
+            <span>Blueprint interpretation</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"><i class="fas fa-check"></i></span>
+            <span>Equipment maintenance</span>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Education</h2>
+        <div class="experience">
+          <div class="experience-title">Junior High School</div>
+          <div class="company">Sta. Lucia High School, Pasig</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-calendar-alt"></i> 2012–2016</span>
+          </div>
+        </div>
+        <div class="experience">
+          <div class="experience-title">Elementary School</div>
+          <div class="company">De Castro Elementary School</div>
+          <div class="experience-meta">
+            <span><i class="fas fa-calendar-alt"></i> 2006–2012</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
